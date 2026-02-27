@@ -1,0 +1,15 @@
+body { font-family: Arial, sans-serif; margin: 0; color: #fff; background-color: #111; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background-color: #000; position: sticky; top: 0; }
+header h1 { color: #f43; }
+nav a { color: #fff; margin-left: 15px; text-decoration: none; }
+#hero { background: url('images/photo1.jpg') center/cover no-repeat; text-align: center; padding: 120px 20px; }
+#hero h2 { font-size: 3em; color: #f43; }
+section { padding: 80px 40px; }
+.gallery-container { display: flex; flex-wrap: wrap; gap: 15px; }
+.gallery-container img { width: 30%; border-radius: 10px; transition: transform .3s; }
+.gallery-container img:hover { transform: scale(1.05); }
+#facebook { text-align: center; background-color: #181818; padding: 60px 20px; }
+#facebook h2 { color: #f43; margin-bottom: 20px; }
+button { background-color: #f43; color: white; border: none; padding: 12px 24px; cursor: pointer; border-radius: 4px; }
+button:hover { background-color: #c32; }
+footer { text-align: center; padding: 30px; background-color: #000; }
