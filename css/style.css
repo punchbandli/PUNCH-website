@@ -1,15 +1,276 @@
-body { font-family: Arial, sans-serif; margin: 0; color: #fff; background-color: #111; }
-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background-color: #000; position: sticky; top: 0; }
-header h1 { color: #f43; }
-nav a { color: #fff; margin-left: 15px; text-decoration: none; }
-#hero { background: url('images/photo1.jpg') center/cover no-repeat; text-align: center; padding: 120px 20px; }
-#hero h2 { font-size: 3em; color: #f43; }
-section { padding: 80px 40px; }
-.gallery-container { display: flex; flex-wrap: wrap; gap: 15px; }
-.gallery-container img { width: 30%; border-radius: 10px; transition: transform .3s; }
-.gallery-container img:hover { transform: scale(1.05); }
-#facebook { text-align: center; background-color: #181818; padding: 60px 20px; }
-#facebook h2 { color: #f43; margin-bottom: 20px; }
-button { background-color: #f43; color: white; border: none; padding: 12px 24px; cursor: pointer; border-radius: 4px; }
-button:hover { background-color: #c32; }
-footer { text-align: center; padding: 30px; background-color: #000; }
+/* ===== COLORS & TYPOGRAPHY ===== */
+:root {
+  --gold: #d29d2b;
+  --red: #b52b24;
+  --black: #000000;
+  --offwhite: #f5e6c5;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--offwhite);
+  color: var(--black);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: "Bebas Neue", "Anton", sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--red);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* ===== NAVBAR ===== */
+header {
+  background-color: var(--black);
+  color: var(--offwhite);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--gold);
+}
+
+nav a {
+  margin: 0 15px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: radial-gradient(circle at center, var(--red), var(--black) 70%);
+  color: var(--offwhite);
+  text-align: center;
+  padding: 120px 20px;
+  animation: fadeIn 2s ease-out;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  color: var(--gold);
+  animation: slideUp 1.5s ease-out;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  animation: slideUp 1.8s ease-out;
+}
+
+.hero button {
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 15px 35px;
+  margin-top: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  animation: pulse 2s infinite;
+}
+
+.hero button:hover {
+  background: var(--red);
+  color: var(--offwhite);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* ===== SECTION TEMPLATE ===== */
+.section {
+  padding: 60px 10%;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* ===== EVENTS ===== */
+.event-card {
+  background: var(--gold);
+  color: var(--black);
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ===== GALLERY ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 5px;
+  border: 3px solid var(--gold);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* ===== MERCH ===== */
+.merch-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.merch-item {
+  background: var(--black);
+  color: var(--offwhite);
+  width: 250px;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  transform: scale(1);
+  transition: transform 0.4s ease;
+}
+
+.merch-item:hover {
+  transform: scale(1.06);
+}
+
+.merch-item img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.merch-item button {
+  background: var(--red);
+  color: var(--offwhite);
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.merch-item button:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* ===== VIDEOS ===== */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+iframe {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  height: 220px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+iframe:hover {
+  transform: scale(1.03);
+}
+
+/* ===== CONTACT & FOOTER ===== */
+footer {
+  background: var(--black);
+  color: var(--offwhite);
+  padding: 50px 10%;
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeIn 1.5s ease-in;
+}
+
+input, textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form button {
+  background: var(--gold);
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: var(--black);
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: var(--red);
+  color: var(--offwhite);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeInDown {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(25px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(30px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 80px 15px; }
+  .hero h1 { font-size: 2.2rem; }
+  nav a { margin: 0 10px; }
+}
