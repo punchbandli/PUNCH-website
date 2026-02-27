@@ -1,85 +1,205 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PUNCH Band | Official Website</title>
-  <link rel="stylesheet" href="css/style.css"/>
-  <script src="js/script.js" defer></script>
-</head>
-<body>
-  <header>
-    <h1>PUNCH Band</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#music">Music</a>
-      <a href="#events">Events</a>
-      <a href="#facebook">Facebook</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <section id="hero">
-    <h2>Playing Unique N Classic Hits</h2>
-    <p>Welcome to the official site of PUNCH Band!</p>
-    <button onclick="document.getElementById('music').scrollIntoView()">Listen Now</button>
-  </section>
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
 
-  <section id="about">
-    <h2>About PUNCH Band</h2>
-    <p>PUNCH Band performs the best in rock and pop hits with a unique, high-energy style. Based in Long Island, NY.</p>
-    <p><strong>Contact:</strong> <a href="mailto:punchbandli@gmail.com">punchbandli@gmail.com</a> | (631) 320-8702</p>
-  </section>
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-  <section id="music">
-    <h2>Music & Videos</h2>
-    <div class="music-embed">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-    </div>
-  </section>
+header h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
-  <section id="events">
-    <h2>Upcoming Events</h2>
-    <ul>
-      <li><strong>March 15, 2026:</strong> Live @ The Blue Note, NYC</li>
-      <li><strong>April 20, 2026:</strong> Rock Festival Tour</li>
-    </ul>
-  </section>
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 
-  <section id="facebook">
-    <h2>Facebook Feed</h2>
-    <div class="fb-page"
-         data-href="https://www.facebook.com/PUNCHbandli"
-         data-tabs="timeline, events, photos"
-         data-width="500"
-         data-height="700"
-         data-hide-cover="false"
-         data-show-facepile="true">
-    </div>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"
-      nonce="FB_NONCE"></script>
-  </section>
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
 
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-container">
-      <img src="images/photo1.jpg" alt="Band Photo 1"/>
-      <img src="images/photo2.jpg" alt="Band Photo 2"/>
-      <img src="images/photo3.jpg" alt="Band Photo 3"/>
-    </div>
-  </section>
+nav a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
 
-  <section id="contact">
-    <h2>Contact & Booking</h2>
-    <p>Email: <a href="mailto:punchbandli@gmail.com">punchbandli@gmail.com</a></p>
-    <p>Follow us on <a href="https://www.facebook.com/PUNCHbandli">Facebook</a> and <a href="https://www.instagram.com">Instagram</a></p>
-  </section>
+section {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  <footer>
-    <p>© 2026 PUNCH Band. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+#hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+#hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+#hero button {
+  background-color: #fff;
+  color: #667eea;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+#hero button:hover {
+  transform: scale(1.05);
+}
+
+#about, #music, #events, #facebook, #gallery, #contact {
+  background: white;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #667eea;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #764ba2;
+  padding-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.music-embed {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.music-embed iframe {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+ul {
+  list-style: none;
+  padding: 1rem 0;
+}
+
+li {
+  padding: 0.5rem 0;
+  margin-left: 1rem;
+  border-left: 4px solid #667eea;
+  padding-left: 1rem;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.gallery-container img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+button[type="scroll-to-top"] {
+  background-color: #667eea;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+button[type="scroll-to-top"]:hover {
+  background-color: #764ba2;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav {
+    gap: 1rem;
+  }
+
+  #hero h2 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
